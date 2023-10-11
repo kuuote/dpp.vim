@@ -34,5 +34,6 @@ function dpp#min#_init() abort
     autocmd!
     autocmd BufWritePost *.lua,*.vim,*.toml,vimrc,.vimrc
           \ call dpp#util#_check_files()
+    autocmd User DppMakeStateDone :
   augroup END
 endfunction

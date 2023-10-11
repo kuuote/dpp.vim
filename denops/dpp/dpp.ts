@@ -1,4 +1,4 @@
-import { assertEquals, Denops, extname, is, vars } from "./deps.ts";
+import { assertEquals, autocmd, Denops, extname, is, vars } from "./deps.ts";
 import {
   ActionName,
   BaseExt,
@@ -233,6 +233,10 @@ export class Dpp {
     //console.log(stateLines);
     //console.log(cacheLines);
     //console.log(rtps);
+
+    await autocmd.emit(denops, "User", "DppMakeStateDone", {
+      nomodeline: true,
+    });
   }
 
   private async getExt(
